@@ -1,0 +1,5 @@
+{
+    "ruby.interpreter.commandPath": "/Users/andysodt/.rvm/rubies/ruby-2.5.3/bin/ruby",
+    "ruby.pathToBundler": "/Users/andysodt/.rvm/gems/ruby-2.5.3/bin/bundle",
+    "ruby.useBundler": true
+}

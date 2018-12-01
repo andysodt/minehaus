@@ -22,6 +22,10 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem "aws-sdk-s3", require: false
 gem 'mini_magick'
+gem 'activeadmin'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
