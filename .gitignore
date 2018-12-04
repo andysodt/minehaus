@@ -32,3 +32,5 @@
 !.elasticbeanstalk/*.global.yml
 !.elasticbeanstalk/config.yml
 
+# visual studio
+.vscode/*
