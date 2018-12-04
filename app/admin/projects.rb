@@ -1,6 +1,7 @@
 ActiveAdmin.register Project do
 
     permit_params :title, task_ids: []
+    decorate_with ProjectDecorator
 
     show :title => :title do
         panel "Tasks" do

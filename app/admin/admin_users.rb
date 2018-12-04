@@ -1,5 +1,6 @@
 ActiveAdmin.register AdminUser do
   permit_params :email, :password, :password_confirmation
+  decorate_with AdminUserDecorator
 
   index do
     selectable_column
