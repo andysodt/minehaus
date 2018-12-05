@@ -1,6 +1,6 @@
 branch-defaults:
   master:
-    environment: Minehaus-env
+    environment: Minehaus-rails
     group_suffix: null
 global:
   application_name: minehaus
