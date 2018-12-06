@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register User do
   permit_params :email, :password, :password_confirmation
   decorate_with UserDecorator
@@ -25,5 +27,4 @@ ActiveAdmin.register User do
     end
     f.actions
   end
-
 end
