@@ -17,7 +17,7 @@ ActiveAdmin.register AdminUser do
   show do
     panel 'Admin User Details' do
       attributes_table_for admin_user do
-        row('Image') { image_tag url_for(admin_user.avatar) }
+        row('AVATAR') { image_tag admin_user.avatar.variant(resize: "75x75").processed }
         row('EMail') { admin_user.email }
       end
     end
