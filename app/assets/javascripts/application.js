@@ -15,4 +15,3 @@
 //= require turbolinks
 //= require_tree .
 //= require twitter/bootstrap
-//= require admin-lte

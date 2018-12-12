@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem "therubyracer"
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "font-awesome-rails"
 gem 'devise'
 gem "aws-sdk-s3", require: false
 gem 'mini_magick'
@@ -26,7 +27,6 @@ gem 'activeadmin'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
-gem 'adminlte-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
