@@ -8,7 +8,7 @@ class AddUuidToEveryTable < ActiveRecord::Migration[5.2]
       "tasks",
       "active_storage_blobs",
       "active_storage_attachments",
-      "active_storage_comments",
+      "active_admin_comments",
     ]
 
     tables.each do |table|
