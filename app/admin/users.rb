@@ -6,6 +6,9 @@ ActiveAdmin.register User do
 
   index do
     selectable_column
+    column :avatar do |user|
+      image_tag user.avatar.variant(resize: "50x50").processed if user.avatar.attached?
+    end
     column :email
     column :current_sign_in_at
     column :sign_in_count
@@ -21,7 +24,7 @@ ActiveAdmin.register User do
   show do
     panel 'User Details' do
       attributes_table_for user do
-        row('AVATAR') { image_tag user.avatar if user.avatar.attached? }
+        row('AVATAR') { image_tag user.avatar.variant(resize: "75x75").processed if user.avatar.attached? }
         row('EMail') { user.email }
       end
     end
