@@ -7,6 +7,7 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
 
+  has_many :tasks
   has_one_attached :avatar
   
 end

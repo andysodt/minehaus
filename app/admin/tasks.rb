@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ActiveAdmin.register Task do
-  permit_params :project_id, :admin_user_id, :title, :is_done, :due_date
+  permit_params :project_id, :user_id, :title, :is_done, :due_date
 
   scope :all, default: true
   scope :due_this_week do |tasks|
@@ -11,7 +11,7 @@ ActiveAdmin.register Task do
     tasks.where('due_date < ?', Time.now)
   end
   scope :mine do |tasks|
-    tasks.where(admin_user_id: current_admin_user.id)
+    tasks.where(user_id: current_user.id)
   end
 
   show do
@@ -20,7 +20,7 @@ ActiveAdmin.register Task do
         row('Status') { status_tag (task.is_done ? 'Done' : 'Pending'), (task.is_done ? :ok : :error) }
         row('Title') { task.title }
         row('Project') { link_to task.project.title, admin_project_path(task.project) }
-        row('Assigned To') { link_to task.admin_user.email, admin_admin_user_path(task.admin_user) }
+        row('Assigned To') { link_to task.user.email, admin_admin_user_path(task.user) }
         row('Due Date') { task.due_date? ? l(task.due_date, format: :long) : '-' }
       end
     end
@@ -32,13 +32,13 @@ ActiveAdmin.register Task do
     column :title
     column :is_done
     column :due_date
-    column :admin_user
+    column :user
 
     actions
   end
 
   sidebar 'Other Tasks For This User', only: :show do
-    table_for current_admin_user.tasks.where(project_id: task.project) do |t|
+    table_for current_user.tasks.where(project_id: task.project) do |t|
       t.column('Status') { |task| status_tag (task.is_done ? 'Done' : 'Pending'), (task.is_done ? :ok : :error) }
       t.column('Title') { |task| link_to task.title, admin_task_path(task) }
     end
