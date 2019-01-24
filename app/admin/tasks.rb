@@ -20,7 +20,7 @@ ActiveAdmin.register Task do
         row('Status') { status_tag (task.is_done ? 'Done' : 'Pending'), (task.is_done ? :ok : :error) }
         row('Title') { task.title }
         row('Project') { link_to task.project.title, admin_project_path(task.project) }
-        row('Assigned To') { link_to task.user.email, admin_admin_user_path(task.user) }
+        row('Assigned To') { link_to task.user.email, admin_user_path(task.user) }
         row('Due Date') { task.due_date? ? l(task.due_date, format: :long) : '-' }
       end
     end
