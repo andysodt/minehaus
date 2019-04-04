@@ -1,7 +1,6 @@
 class ChangeForeignKeysToUuid < ActiveRecord::Migration[5.2]
   def up
     id_to_uuid("tasks", "project", "project")
-    id_to_uuid("tasks", "admin_user", "admin_user")
   end
 
   def id_to_uuid(table_name, relation_name, relation_class)
