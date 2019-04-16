@@ -6,7 +6,6 @@ class ChangePrimaryKeysToUuid < ActiveRecord::Migration[5.2]
       active_admin_comments
       active_storage_attachments
       active_storage_blobs
-      admin_users
       users
       posts
       projects

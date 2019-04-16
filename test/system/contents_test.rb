@@ -15,7 +15,7 @@ class ContentsTest < ApplicationSystemTestCase
     click_on "New Content"
 
     fill_in "Description", with: @content.description
-    fill_in "Name", with: @content.name
+    fill_in "Title", with: @content.title
     click_on "Create Content"
 
     assert_text "Content was successfully created"
@@ -27,7 +27,7 @@ class ContentsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Description", with: @content.description
-    fill_in "Name", with: @content.name
+    fill_in "Title", with: @content.title
     click_on "Update Content"
 
     assert_text "Content was successfully updated"

@@ -3,7 +3,6 @@ class AddUuidToEveryTable < ActiveRecord::Migration[5.2]
     tables = [
       "posts",
       "users",
-      "admin_users",
       "projects",
       "tasks",
       "active_storage_blobs",
