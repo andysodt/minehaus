@@ -24,7 +24,9 @@ ActiveAdmin.register User do
   show do
     panel 'User Details' do
       attributes_table_for user do
-        row('avatar') { image_tag user.avatar.variant(resize: "75x75").processed if user.avatar.attached? }
+        row('pic') do
+          image_tag user.avatar.variant(resize: '200x200').processed if user.avatar.attached? 
+        end
         row('email') { user.email }
       end
     end
