@@ -1,4 +1,4 @@
-class ContentDecorator < ApplicationDecorator
+class ResourceDecorator < ApplicationDecorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

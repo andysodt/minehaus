@@ -24,10 +24,12 @@ ActiveAdmin.register User do
   show do
     panel 'User Details' do
       attributes_table_for user do
-        row('pic') do
+        row :pic do
           image_tag user.avatar.variant(resize: '200x200').processed if user.avatar.attached? 
         end
-        row('email') { user.email }
+        row :email do
+          user.email
+        end
       end
     end
 

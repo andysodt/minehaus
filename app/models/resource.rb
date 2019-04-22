@@ -1,5 +1,5 @@
 # frozen_string_literal: true
 
-class Content < ApplicationRecord
+class Resource < ApplicationRecord
   has_one_attached :attached_file
 end
