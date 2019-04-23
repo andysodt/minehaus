@@ -35,7 +35,6 @@ gem 'mini_magick', '~> 4.8'
 gem 'pundit'
 gem 'therubyracer'
 gem 'twitter-bootstrap-rails'
-gem 'webpacker'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
