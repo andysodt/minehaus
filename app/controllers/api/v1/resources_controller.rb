@@ -4,7 +4,7 @@ module Api
   module V1
     class ResourcesController < ApplicationController
       def index
-        render json: Resource.all
+        render json: Resource.with_attached_attached_file
       end
 
       def create
@@ -25,7 +25,7 @@ module Api
       private
 
       def resource_params
-        params.require(:resource).permit(:id, :title, :description, :attached_file)
+        params.require(:resource).permit(:id, :title, :description, :url)
       end
     end
   end
