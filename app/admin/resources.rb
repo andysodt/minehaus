@@ -7,10 +7,12 @@ ActiveAdmin.register Resource do
   index do
     selectable_column
     column :attached_file do |resource|
-      if resource.attached_file.previewable?
-        image_tag resource.attached_file.preview(resize: '75x75').processed
-      elsif resource.attached_file.variable?
-        image_tag resource.attached_file.variant(resize: '75x75').processed
+      if resource.attached_file.attached?
+        if resource.attached_file.previewable?
+          image_tag resource.attached_file.preview(resize: '75x75').processed
+        elsif resource.attached_file.variable?
+          image_tag resource.attached_file.variant(resize: '75x75').processed
+        end
       end
     end
     column :title
@@ -26,11 +28,13 @@ ActiveAdmin.register Resource do
     panel 'Resource Details' do
       attributes_table_for resource do
         row :attached_file do
-          if resource.attached_file.previewable?
-            image_tag resource.attached_file.preview(resize: '200x200').processed
-          elsif resource.attached_file.variable?
-            image_tag resource.attached_file.variant(resize: '200x200').processed
-          end
+          if resource.attached_file.attached?
+            if resource.attached_file.previewable?
+              image_tag resource.attached_file.preview(resize: '200x200').processed
+            elsif resource.attached_file.variable?
+              image_tag resource.attached_file.variant(resize: '200x200').processed
+            end
+        end
         end
         row :title do
           resource.title

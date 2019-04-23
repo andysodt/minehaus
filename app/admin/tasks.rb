@@ -17,7 +17,7 @@ ActiveAdmin.register Task do
   show do
     panel 'Task Details' do
       attributes_table_for task do
-        row('Status') { status_tag (task.is_done ? 'Done' : 'Pending') , class: (task.is_done ? :ok : :error) }
+        row('Status') { status_tag (task.is_done ? 'Done' : 'Pending')}
         row('Title') { task.title }
         row('Project') { link_to task.project.title, admin_project_path(task.project) }
         row('Assigned To') { link_to task.user.email, admin_user_path(task.user) }
@@ -39,7 +39,7 @@ ActiveAdmin.register Task do
 
   sidebar 'Other Tasks For This User', only: :show do
     table_for current_user.tasks.where(project_id: task.project) do |t|
-      t.column('Status') { |task| status_tag (task.is_done ? 'Done' : 'Pending') , class: (task.is_done ? :ok : :error) }
+      t.column('Status') { |task| status_tag (task.is_done ? 'Done' : 'Pending') }
       t.column('Title') { |task| link_to task.title, admin_task_path(task) }
     end
   end
