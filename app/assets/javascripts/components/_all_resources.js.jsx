@@ -16,7 +16,7 @@ class AllResources extends React.Component {
 				<div key={resource.id}>
 					<h1>{resource.title}</h1>
 					<p>{resource.description}</p>
-					<p>{resource.url}</p>
+					<p><img src={resource.url}/></p>
 				</div>
 			)
 		})
