@@ -246,8 +246,8 @@ GEM
       method_source (~> 0.9.0)
       spoon (~> 0.0)
     public_suffix (3.1.0)
-    puma (3.12.1)
-    puma (3.12.1-java)
+    puma (3.12.3)
+    puma (3.12.3-java)
     pundit (2.0.1)
       activesupport (>= 3.0.0)
     rack (2.0.7)
@@ -411,7 +411,7 @@ DEPENDENCIES
   mini_magick (~> 4.8)
   pg (>= 0.18, < 2.0)
   pry
-  puma (~> 3.11)
+  puma (~> 3.12)
   pundit
   rails (= 6.0.0.rc1)
   react-rails
